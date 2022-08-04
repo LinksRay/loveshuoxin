@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  padding-top: 10vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: antiquewhite;
+}
+
+.stage {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  perspective: 5000px;
+  transform-origin: center 10%;
+  animation: 1s infinite linear bomb;
+}
+
+.left-heart,
+.right-heart {
+  position: relative;
+  height: 20vw;
+  width: 20vw;
+  background-color: red;
+  box-shadow: 0 0 4vw rgba(255, 0, 0, .8);
+}
+
+.left-heart {
+  left: 10vw;
+  transform: rotate(-45deg);
+}
+.right-heart {
+  right: 10vw;
+  transform: rotate(45deg);
+}
+
+.left-top,
+.right-top {
+  position: absolute;
+  top: -10vw;
+  width: 20vw;
+  height: 20vw;
+  background: red;
+  border-radius: 50%;
+  box-shadow: 0 0 4vw rgba(255, 0, 0, .8);
+}
+
+.letter {
+  margin: 20vh 5vw 0;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  text-align: center;
+  transform: translate(0, -30vh) scale(0);
+  transition: all ease-in-out 300ms;
+  font-size: 20px;
+}
+
+.show-letter {
+  transform: translate(0, 0) scale(1) rotate(360deg);
+}
+
+@keyframes bomb {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
